@@ -19,8 +19,12 @@
     <script>
       (function() {
         var socket = io.connect('http://localhost:8080');
+        socket.on('connect', function(data) {
+          socket.emit('join', prompt("What is your name?"));
+        });
+
         var appendMessage = function(data) {
-          $('#chat-log').append("<li><span>" + data + "</span></li>");
+          $('#chat-log').append(data);
         }
         socket.on('messages', function(data) {
           appendMessage(data);
@@ -30,6 +34,7 @@
           e.preventDefault();
           var message = $('#chat_input').val();
           socket.emit('messages', message);
+          $('#chat_input').val('');
         });
       })();
     </script>

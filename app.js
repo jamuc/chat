@@ -5,10 +5,15 @@ var io = require('socket.io')(server);
 
 io.on('connection', function(client){
   console.log("Client connected ...");
+
+  client.on('join', function(name) {
+    client.name = name;
+  });
+
   client.on('messages', function(data) {
     console.log(data);
-    client.emit('messages', data);
-    client.broadcast.emit('messages', data);
+    client.emit('messages', "<li>" + client.name + ": <span>" + data + "</span></li>");
+    client.broadcast.emit('messages', "<li>" + client.name + ": <span>" + data + "</span></li>");
   });
 });
 
