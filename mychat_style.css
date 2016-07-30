@@ -1,9 +1,26 @@
 #chat-window {
   border: 1px solid #333;
   height: 600px;
-  padding: 20px;
   margin-bottom: 48px;
+  overflow-y: auto;
   width: 600px;
+}
+
+#chat-log {
+  padding: 10px;
+}
+
+#chat-log li {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+#chat-log span {
+  background: cornflowerblue;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 20px;
+  width: 200px;
 }
 
 #chat_input {

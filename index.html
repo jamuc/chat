@@ -19,8 +19,11 @@
     <script>
       (function() {
         var socket = io.connect('http://localhost:8080');
+        var appendMessage = function(data) {
+          $('#chat-log').append("<li><span>" + data + "</span></li>");
+        }
         socket.on('messages', function(data) {
-          alert(data.hello);
+          appendMessage(data);
         });
 
         $('#chat').submit(function(e) {
