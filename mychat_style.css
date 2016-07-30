@@ -1,0 +1,12 @@
+#chat-window {
+  border: 1px solid #333;
+  height: 600px;
+  padding: 20px;
+  margin-bottom: 48px;
+  width: 600px;
+}
+
+#chat_input {
+  line-height: 32px;
+  width: 600px;
+}

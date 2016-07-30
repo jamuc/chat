@@ -12,4 +12,8 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/mychat_style.css', function(req, res) {
+  res.sendFile(__dirname + '/mychat_style.css');
+});
+
 server.listen(8080);
