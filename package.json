@@ -9,6 +9,7 @@
   "author": "jason.b.franklin@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "socket.io": "^1.4.8"
   }
 }
