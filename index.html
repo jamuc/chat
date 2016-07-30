@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="/socket.io/socket.io.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="mychat_style.css">
   </head>
   <body>
@@ -20,6 +21,12 @@
         var socket = io.connect('http://localhost:8080');
         socket.on('messages', function(data) {
           alert(data.hello);
+        });
+
+        $('#chat').submit(function(e) {
+          e.preventDefault();
+          var message = $('#chat_input').val();
+          socket.emit('messages', message);
         });
       })();
     </script>
